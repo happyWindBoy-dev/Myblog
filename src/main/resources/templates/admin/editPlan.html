@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8;">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="shortcut icon" href="img/cat.png" type="image/x-icon" />
+    <link rel="icon" href="img/cat.png" type="image/gif">
+    <link rel="stylesheet" href="css/plan.css">
+    <script src="js/img.js"></script>
+    <script src="js/jquery/2.0.0/jquery.min.js"></script>
+    <link href="css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <script src="js/vue/2.5.16/vue.min.js"></script>
+    <script src="js/axios/0.17.1/axios.min.js"></script>
+    <script src="js/moment/2.22.2/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+        $(function () {
+            var data4Vue = {
+                uri: 'plans',
+                listURL: 'admin_plan_list',
+                bean: {id: 0, content: '',finish:''}
+            };
+
+            var vue = new Vue({
+                el: '.exit-content',
+                data: data4Vue,
+                mounted: function () {
+                    this.get();
+                },
+                methods: {
+                    get: function () {
+                        var id = getUrlParms("id");
+                        var url = this.uri + "/" + id;
+                        axios.get(url).then(function (response) {
+                            vue.bean = response.data;
+                        })
+                    },
+                    update: function () {
+                        if(!checkEmpty(this.bean.content ,"修改内容"))
+                            return;
+                        var url=this.uri+"/"+this.bean.id;
+                        var formData=new FormData();
+                        formData.append("content", this.bean.content);
+                        formData.append("finish", this.bean.finish);
+                        axios.post(url,formData).then(function(response) {
+                            location.href=vue.listURL;
+                        });
+                    }
+                }
+            })
+        })
+    </script>
+    <style>
+        .exit-table{
+            margin-top: 40px;
+            width: 1200px;
+            margin-left: 390px;
+        }
+        .exit-content{
+            margin:40px auto;
+        }
+        .exit-content div{
+            margin-top: 30px;
+            color: #13225a;
+            font-weight: bold;
+        }
+        .edit-t{
+            margin-left: 100px;
+            font-weight: bold;
+            font-size: 40px;
+            color: #a94be5;
+        }
+        .edit-i{
+            font-size: 19px;
+            color: #a94be5;
+            border: none;
+            border-bottom: 1px #13225a solid;
+            outline: none;
+            width: 350px;
+        }
+        .btnn{
+            margin-left: 300px;
+        }
+        .btn{
+            width: 100px;
+            height: 40px;;
+        }
+    </style>
+</head>
+<body>
+<div class="hd">
+    <div class="hd-bar">
+            <span class="logo">
+                <a href="#nowhere"><img src="img/cat.png" width="50px"></img></a>
+            </span>
+        <span class="tips">
+                <img src="img/name.png" alt="" width="125px;">
+            </span>
+        <span class="hd-info pull-right">
+                    <a href="#nowhere">每日代码</a>
+                    <span class="l">|</span>
+                    <a href="#nowhere">学习计划</a>
+                    <span class="l">|</span>
+                    <a href="#nowhere">学习打卡</a>
+                    <span class="l">|</span>
+                    <a href="https://weibo.com/5983438364/profile?rightmod=1&wvr=6&mod=personinfo">看我</a>
+            </span>
+    </div>
+</div>
+<div class="bd-title"><img src="img/plan-tilte.png" width="600px"></img></div>
+<div class="bd">
+    <div class="exit-table">
+        <div style="font-size:24px;" class="exit-content">
+            <span class="edit-t">修改计划</span>
+            <div>计划内容:<input type="text" name="content" class="edit-i" placeholder="输入计划内容" v-model.trim="bean.content"></div>
+            <input type="hidden" name="id"   v-model.trim="bean.id" >
+            <div>计划完成情况:已完成: <input type="radio" v-model="bean.finish" value="true" name="do" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;未完成: <input type="radio" v-model="bean.finish" name="do" value="false" ></div>
+            <div class="btnn"><button type="submit" width="140px" class="btn btn-primary" @click="update">提交</button></div>
+        </div>
+    </div>
+
+</div>
+
+<div class="cathd"><img src="img/cat-2.png" width="150px"></img></div>
+<div class="foot">
+    <div class="word pull-right">有一天飞向天空就像波音747</div>
+
+</div>
+
+
+
+
+<script src="js/plan.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/menu.js"></script>
+<!-- <script src="js/index.js"></script>  -->
+
+</body>
+</html>

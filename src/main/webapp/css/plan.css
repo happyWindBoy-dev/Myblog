@@ -1,0 +1,137 @@
+.hd{
+    border-bottom: 3px solid #a94be5;
+}
+.hd-bar{
+    width: 1400px;
+    margin: 0 auto;
+
+}
+
+.tips{
+    font-family: 'STHupo';
+    font-size: 20px;
+    font-weight: bold;
+    color: #13227a;
+    margin: 50px;
+    line-height: 50px;
+    cursor: pointer;
+}
+.tips:hover {
+    display: none;
+}
+
+.hd-info a{
+    color:#13227a;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: '微软雅黑';
+    font-size: 18px;
+    line-height: 50px;
+    margin: 0px 25px;
+    text-decoration: none;
+}
+.hd-info a:hover{
+    text-decoration: none;
+    color: #a94be5;
+}
+.bd{
+
+    width: 1300px;
+    margin: 0 auto;
+}
+.bd-title{
+    width: 1400px;
+}
+.bd-title img{
+    margin-left: 440px;
+    margin-top: 30px;
+    cursor: pointer;
+
+}
+.bd-title img:hover{
+    opacity: 0.8;
+}
+.month{
+    font-size: 50px;
+    font-weight: bold;
+    width: 80px;
+    cursor: pointer;
+    color:#13227a;
+    border-bottom: #a94be5 10px solid;
+}
+.month:hover{
+
+
+    border-bottom:#13227a 10px solid;
+}
+.content{
+    color:#13225a;
+    width: 900px;
+    margin-left: 380px;;
+    font-size: 30px;
+    border-left: rgb(197, 193, 216) 2px solid;
+
+}
+.content li{
+    cursor: pointer;
+    padding-bottom: 5px;
+    margin-bottom: 4px;
+
+}
+.content li:hover{
+    color: #a94be5;
+    font-weight: bold;
+}
+.add{
+    margin-top: 30px;
+    margin-left: 900px;
+    cursor: pointer;
+}
+.add:hover{
+    opacity: 0.85;
+}
+.addcontent{
+    margin-left: 380px;
+    margin-top: -35px;
+}
+.addtext{
+    font-size: 17px;
+    outline: none;
+    width: 279px;
+}
+.btn{
+    margin-top:-5px;
+    margin-left: 30px;
+    border: #13225a;
+    outline: none;
+}
+.foot{
+    margin-top: px;
+    width: 100%;
+    height: 100px;;
+    background-color:#13225a;
+    color: #fff;
+
+}
+.word{
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.cathd{
+    margin-top:100px;
+    margin-left: 600px;
+}
+.dele{
+    opacity: 1;
+}
+.delet:hover{
+    opacity: 0.5;
+}
+.edit{
+    display: none;
+    margin-right: 150px;
+}
+.edit:hover{
+    opacity: 0.6;
+}

@@ -1,0 +1,99 @@
+.hd{
+    border-bottom: 3px solid #a94be5;
+}
+.hd-bar{
+    width: 1400px;
+    margin: 0 auto;
+
+}
+
+.tips{
+    font-family: 'STHupo';
+    font-size: 20px;
+    font-weight: bold;
+    color: #13227a;
+    margin: 50px;
+    line-height: 50px;
+    cursor: pointer;
+}
+.tips:hover {
+    display: none;
+}
+
+.hd-info a{
+    color:#13227a;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: '微软雅黑';
+    font-size: 18px;
+    line-height: 50px;
+    margin: 0px 25px;
+    text-decoration: none;
+}
+.hd-info a:hover{
+    text-decoration: none;
+    color: #a94be5;
+}
+.bd{
+    height: 1000px;
+
+    margin: 0 auto;
+}
+.bd-title{
+    width: 1400px;
+}
+.bd-title img{
+    margin-left: 440px;
+    margin-top: 30px;
+    cursor: pointer;
+
+}
+.bd-title img:hover{
+    opacity: 0.8;
+}
+.wait{
+    margin-top: 160px;
+    width:100%;
+    height: 400px;
+    background-color: #13227a;
+    padding: 50px;
+}
+.cathd{
+    position: relative;
+    top:160px;
+    left: 670px;
+    cursor: pointer;
+}
+.box{
+    margin-top: 50px;
+}
+
+
+.zb{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.wait{
+    color: #fff;
+}
+.cathd:hover +.wait{
+
+    background-color: #a94be5;
+}
+.cathd:hover{
+    opacity: 0.8;
+}
+.zb:hover+.flash{
+    opacity: 1;
+}
+.flash{
+    margin-left: 1200px;
+    opacity: 0;
+}
+.me{
+    margin-top: 80px;
+
+}
